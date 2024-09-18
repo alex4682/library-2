@@ -1,0 +1,65 @@
+#books {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#books_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px 80px;
+    justify-content: center;
+    width: 1060px;
+}
+
+.books_item {
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 65px;
+    padding-bottom: 50px;
+    padding: 35px;
+}
+
+.books_list_wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.books_list_rating_text {
+    color: yellow;
+    display: flex;
+    align-items: center;
+}
+
+.books_rating_img {
+    fill: yellow;
+}
+
+.books_text_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.books_name {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.books_author {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.books_year {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}

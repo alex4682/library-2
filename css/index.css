@@ -1,0 +1,204 @@
+ul {
+  list-style: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.add-book {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 100%;
+  position: fixed;
+  background-color: rgb(153, 153, 153);
+  right: 20;
+  bottom: 30px;
+  font-size: 50px;
+  padding-bottom: 7px;
+  padding-left: 2px;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 440px;
+  justify-content: space-between;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 15px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 60px 0 60px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 17px;
+}
+
+.logo {
+  font-size: 36px;
+  color: #00DFE0;
+}
+
+.nav-list-btn {
+  font-size: 34px;
+  padding: 3px 10px 3px 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: #C4C4C4;
+  color: #00DFE0;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.hero-wrap {
+  background-color: #FFB400;
+  width: 440px;
+  height: 221px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  position: relative;
+  left: 15px;
+  bottom: 30px;
+  padding: 15px;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.add-list {
+  display: flex;
+  gap: 25px;
+  margin-right: 70px;
+  align-items: center;
+}
+
+#add-book {
+  height: 40px;
+  width: 200px;
+  border: none;
+  border-radius: 50px;
+  background-color: #ffb400;
+  color: #fff;
+  font-size: 20px;
+}
+
+#add-customer {
+  height: 40px;
+  width: 200px;
+  border: none;
+  border-radius: 50px;
+  background-color: #ffb400;
+  color: #fff;
+  font-size: 20px;
+}
+
+#books {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+#books_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px 80px;
+  justify-content: center;
+  width: 1060px;
+}
+
+.books_item {
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 65px;
+  padding-bottom: 50px;
+  padding: 35px;
+}
+
+.books_list_wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.books_list_rating_text {
+  color: yellow;
+  display: flex;
+  align-items: center;
+}
+
+.books_rating_img {
+  fill: yellow;
+}
+
+.books_text_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.books_name {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.books_author {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.books_year {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#top-books-list,
+#new-books-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top-text {
+  color: darkblue;
+  font-size: 30px;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

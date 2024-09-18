@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 440px;
+    justify-content: space-between;
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px 0 60px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 17px;
+}
+
+.logo {
+    font-size: 36px;
+    color: #00DFE0;
+}
+
+.nav-list-btn {
+    font-size: 34px;
+    padding: 3px 10px 3px 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #C4C4C4;
+    color: #00DFE0;
+}

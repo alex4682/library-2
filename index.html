@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page title</title>
+    <link rel="stylesheet" href="./css/index.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="logo">Library</a>
+        <ul class="nav-list">
+          <li>
+            <button class="nav-list-btn" data-open="books">Книги</button>
+          </li>
+          <li>
+            <button class="nav-list-btn" data-open="customers">
+              Відвідувачі
+            </button>
+          </li>
+          <li>
+            <button class="nav-list-btn" data-open="rating">Рейтинги</button>
+          </li>
+        </ul>
+      </nav>
+      <section class="hero">
+        <div class="hero-wrap">
+          <h1 class="hero-title">Читай, навчайся й пізнавай нове</h1>
+        </div>
+        <ul class="add-list">
+          <li class="add-item"><button id="add-book">Додати книгу</button></li>
+          <li class="add-item">
+            <button id="add-customer">Додати відвідувача</button>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <main>
+      <section class="books" id="books">
+        <ul id="books_list"></ul>
+      </section>
+      <section class="customers hidden" id="customers"></section>
+      <section class="rating hidden" id="rating">
+        <p class="top-text">Наші найкращі книги</p>
+        <ul id="top-books-list"></ul>
+        <p class="top-text">Наші найновіші книги</p>
+        <ul id="new-books-list"></ul>
+        <ul></ul>
+      </section>
+    </main>
+    <script type="module" src="./js/open.js"></script>
+    <script type="module" src="./js/books.js"></script>
+    <script type="module" src="./js/rating.js"></script>
+  </body>
+</html>

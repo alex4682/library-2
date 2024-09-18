@@ -1,0 +1,17 @@
+.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#top-books-list,
+#new-books-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top-text {
+    color: darkblue;
+    font-size: 30px;
+    text-align: center;
+}
