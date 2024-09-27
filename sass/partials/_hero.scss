@@ -1,51 +1,131 @@
 .hero {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 30px;
+    color: white;
 }
 
 .hero-wrap {
-    background-color: #FFB400;
-    width: 440px;
-    height: 221px;
-    display: flex;
-    align-items: center;
-    border-radius: 50px;
-    position: relative;
-    left: 15px;
-    bottom: 30px;
-    padding: 15px;
+    background-color: rgba(255, 180, 0, 0.8);
+    /* Semi-transparent background */
+    width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
 }
 
 .hero-title {
-    font-size: 50px;
+    font-size: 48px;
     font-weight: bold;
-    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .add-list {
     display: flex;
     gap: 25px;
-    margin-right: 70px;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
-#add-book {
-    height: 40px;
-    width: 200px;
-    border: none;
-    border-radius: 50px;
-    background-color: #ffb400;
-    color: #fff;
-    font-size: 20px;
-}
-
+#add-book,
 #add-customer {
-    height: 40px;
-    width: 200px;
+    height: 50px;
+    width: 220px;
     border: none;
     border-radius: 50px;
     background-color: #ffb400;
     color: #fff;
     font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-book:hover,
+#add-customer:hover {
+    background-color: #d18e00;
+}
+
+#add-book-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+}
+
+.book-modal {
+    width: 600px;
+    background-color: #ffc0c0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.book-modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+#close-book-modal {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    top: 10px;
+    left: 530px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
 }

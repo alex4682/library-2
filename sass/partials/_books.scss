@@ -12,23 +12,9 @@
     width: 1060px;
 }
 
-.books_item {
-    width: 300px;
-    height: 400px;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 65px;
-    padding-bottom: 50px;
-    padding: 35px;
-}
 
-.books_list_wrap {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+
+
 
 .books_list_rating_text {
     color: yellow;
@@ -62,4 +48,44 @@
     color: white;
     font-size: 20px;
     font-weight: 500;
+}
+
+
+.books_item {
+    position: relative;
+    /* Це потрібно для правильного позиціонування серця */
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px 35px 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.books_list_wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    align-self: start;
+    position: relative;
+    /* Додано для позиціонування рейтингу */
+}
+
+.books_heart_img {
+    fill: red;
+    stroke-width: 2px;
+    stroke: rgb(255, 255, 255);
+    position: absolute;
+    top: 10px;
+    /* Відступ від верху контейнера книги */
+    right: 10px;
+    /* Вирівнювання серця праворуч */
+    width: 23px;
+    height: 23px;
+    z-index: 1;
+    /* Щоб серце було поверх інших елементів */
 }

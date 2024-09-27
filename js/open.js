@@ -21,3 +21,4 @@ openRating.addEventListener("click", () => {
     rating.classList.remove("hidden");
     books.classList.add("hidden")
 });
+
