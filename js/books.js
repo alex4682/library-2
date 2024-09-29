@@ -1,5 +1,6 @@
 const booksList = document.querySelector("#books_list");
 
+
 export const books = [
     {
         image: "images/game-of-thrones.jpeg",
@@ -92,12 +93,15 @@ export const books = [
         favourite: 0,
     },
 ];
-function renderBooks() {
-    const newBooks = books.sort((a, b) => b.favourite - a.favourite).map(book => `
+const buyList = []
+
+// Визначаємо функцію для рендерингу книг
+export function renderBooks(list, booksArray, classItem) {
+    const newBooks = booksArray.sort((a, b) => b.favourite - a.favourite).map((book, index) => `
     <li style="background-image: url(${book.image});" class="books_item">
-    <svg width="23" height="23" class="books_heart_img hidden">
-                <use href="images/symbol-defs.svg#icon-heart"></use>
-            </svg>
+        <svg width="23" height="23" class="books_heart_img hidden">
+            <use href="images/symbol-defs.svg#icon-heart"></use>
+        </svg>
         <div class="books_list_wrap">
             <p class="books_list_rating_text">${book.rating}</p> 
             <svg width="23" height="23" class="books_rating_img">
@@ -126,19 +130,21 @@ function renderBooks() {
                         <span class="favorite-icon">${book.favourite ? '♥' : '♡'}</span> 
                         ${book.favourite ? 'В обраному' : 'Додати в обране'}
                     </button>
-                    <button class="btn buy-btn">Купить</button>
+                    <button class="btn buy-btn">Купити</button>
                 </div>
             </div>
         </div>
     </li>`).join("");
 
-    booksList.innerHTML = newBooks;
+    list.innerHTML = newBooks;
 
-    const booksItems = document.querySelectorAll(".books_item");
+    const booksItems = document.querySelectorAll(classItem);
     booksItems.forEach((bookItem, index) => {
         const closeButton = bookItem.querySelector(".card-close-btn");
         const card = bookItem.querySelector(".card");
+        const buyBtn = bookItem.querySelector(".buy-btn");
 
+        // Закриття картки
         if (closeButton) {
             closeButton.addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -147,57 +153,65 @@ function renderBooks() {
             });
         }
 
+        // Відкриття картки
         bookItem.addEventListener("click", () => {
             document.querySelectorAll(".card").forEach(c => c.classList.add("hidden"));
             card.classList.remove("hidden");
             document.body.classList.add("no-scroll");
         });
 
+        // Логіка для кнопки покупки
+        buyBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // Зупиняємо подію
+            if (!buyList.includes(booksArray[index])) {
+                buyList.push(booksArray[index]);
+                buyBtn.textContent = "Повернути книгу";
+                buyBtn.classList.remove("buy-btn");
+                buyBtn.classList.add("return-btn");
+                document.querySelector(".buy-books").classList.remove("hidden");
+                renderBooks(document.querySelector(".buy-list"), buyList, "books-item")
+            } else {
+                buyList.splice(buyList.indexOf(booksArray[index]), 1);
+                buyBtn.textContent = "Купити";
+                buyBtn.classList.add("buy-btn");
+                buyBtn.classList.remove("return-btn");
+                renderBooks(document.querySelector(".buy-list"), buyList, "books-item")
+                if (buyList.length === 0) {
+                    // Якщо список покупок порожній, ховати візуальні елементи
+                    document.querySelector(".buy-books").classList.add("hidden");
+                }
+            }
+            console.log("Куплені книги:", buyList);
+        });
+
+        // Логіка для кнопки "Видалити"
+        const deleteBtn = bookItem.querySelector(".delete-btn");
+        deleteBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            booksArray.splice(index, 1);
+            renderBooks(list, booksArray, classItem);
+        });
+
+        // Логіка для обраних книг
         const favouriteBtn = bookItem.querySelector(".favorite-btn");
         const heart = bookItem.querySelector(".books_heart_img");
-
-        // Показуємо серце, якщо книга вже в обраному
-        if (books[index].favourite === 1) {
+        if (booksArray[index].favourite === 1) {
             heart.classList.remove("hidden");
         } else {
             heart.classList.add("hidden");
         }
 
         favouriteBtn.addEventListener("click", (e) => {
-            e.stopPropagation(); // Зупиняємо поширення події
-            books[index].favourite = books[index].favourite === 0 ? 1 : 0;
-
-            if (books[index].favourite === 1) {
-                heart.classList.remove("hidden"); // Показуємо серце
-                favouriteBtn.querySelector(".favorite-icon").textContent = '♥';
-                favouriteBtn.querySelector(".favorite-icon").nextSibling.nodeValue = ' В обраному';
-            } else {
-                heart.classList.add("hidden"); // Приховуємо серце
-                favouriteBtn.querySelector(".favorite-icon").textContent = '♡';
-                favouriteBtn.querySelector(".favorite-icon").nextSibling.nodeValue = ' Додати в обране';
-            }
-
-            // Повторно рендеримо список для оновлення сортування
-            renderBooks();
-        });
-
-        // Додаємо логіку для видалення книги
-        const deleteBtn = bookItem.querySelector(".delete-btn");
-
-        deleteBtn.addEventListener("click", (e) => {
             e.stopPropagation();
-
-            books.splice(index, 1);
-            document.body.classList.remove("no-scroll");
-            renderBooks();
+            booksArray[index].favourite = booksArray[index].favourite === 0 ? 1 : 0;
+            document.body.classList.remove("no-scroll")
+            renderBooks(list, booksArray, classItem);
         });
     });
-
 }
 
 
-
-renderBooks();
+renderBooks(booksList, books, ".books_item");
 
 const addBookBtn = document.querySelector("#add-book");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
@@ -214,11 +228,9 @@ closeBookModalBtn.addEventListener("click", () => {
     document.body.classList.remove("no-scroll");
 });
 
-// Додаємо нову книгу
 bookForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Зупиняємо стандартну поведінку форми
+    e.preventDefault();
 
-    // Отримуємо значення з полів
     const newBook = {
         bookName: document.querySelector("#book-name").value,
         author: document.querySelector("#book-author").value,
@@ -229,13 +241,10 @@ bookForm.addEventListener("submit", (e) => {
         rating: document.querySelector("#book-rating").value,
         favourite: 0,
     };
+    addBookModal.classList.add("hidden");
+    document.body.classList.remove("no-scroll");
 
     books.push(newBook);
 
-    renderBooks();
-
-    bookForm.reset();
-
-    addBookModal.classList.add("hidden");
-    document.body.classList.remove("no-scroll");
+    renderBooks(booksList, books, ".books_item")
 });

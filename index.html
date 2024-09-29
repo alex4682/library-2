@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="./css/index.min.css" />
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <header class="header">
+      <div class="header-top">
+        <div class="header_icon_profile"></div>
+      </div>
+      <div id="menu_section_container" class="menu_section_container">
+        <div id="user_details_container" class="user-details"></div>
+        <div id="auth_buttons_container" class="auth-buttons">
+          <a href="login.html">
+            <button class="btn">Войти</button>
+          </a>
+          <a href="register.html">
+            <button class="btn">Регистрация</button>
+          </a>
+        </div>
+      </div>
       <nav class="nav">
         <a href="#" class="logo">Library</a>
         <ul class="nav-list">
@@ -117,9 +133,15 @@
         <ul id="new-books-list"></ul>
         <ul></ul>
       </section>
+      <section class="buy-books hidden">
+        <h3 class="buy-title">Куплені книги</h3>
+        <ul class="buy-list"></ul>
+      </section>
     </main>
     <script type="module" src="./js/open.js"></script>
     <script type="module" src="./js/books.js"></script>
     <script type="module" src="./js/rating.js"></script>
+    <script type="module" src="./register.js"></script>
+    <script type="module" src="./login.js"></script>
   </body>
 </html>

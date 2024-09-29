@@ -430,7 +430,8 @@ button[type=submit]:hover {
   color: white;
 }
 
-.buy-btn {
+.buy-btn,
+.return-btn {
   background-color: #28a745;
   color: white;
 }
@@ -458,4 +459,31 @@ button[type=submit]:hover {
 
 .card-close-btn:hover {
   color: #ff007b;
+}
+
+.buy-books {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.buy-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.buy-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
 }/*# sourceMappingURL=index.css.map */

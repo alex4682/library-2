@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Панель администратора</title>
+</head>
+<body class="light-theme">
+    <header>
+        <h1>Панель администратора</h1>
+    </header>
+    <main>
+        <section class="user-section">
+            <h2>Пользователи</h2>
+            <div class="filter-sort-container">
+                <div class="filter-container">
+                    <label for="search-user">Поиск:</label>
+                    <input type="text" id="search-user" placeholder="Введите имя пользователя" aria-label="Search user">
+                </div>
+                <div class="sort-container">
+                    <label for="sort-users">Сортировка:</label>
+                    <select id="sort-users" class="sort" aria-label="Sort users">
+                        <option value="name">По имени</option>
+                        <option value="rating">По рейтингу</option>
+                    </select>
+                </div>
+            </div>
+            <div class="user-card-container"></div>
+            <button id="add-user-btn" class="action-btn" aria-label="Add user">Добавить пользователя</button>
+        </section>
+    </main>
+
+   
+    <div class="modal-overlay-add-user" aria-hidden="true">
+        <div class="modal-add-user">
+            <h3>Добавить пользователя</h3>
+            <label for="new-user-name">Имя:</label>
+            <input type="text" id="new-user-name" placeholder="Введите имя">
+            <label for="new-user-age">Возраст:</label>
+            <input type="number" id="new-user-age" placeholder="Введите возраст">
+            <label for="new-user-rating">Рейтинг:</label>
+            <input type="text" id="new-user-rating" placeholder="Введите рейтинг (★ ★ ★ ★ ☆)">
+            <div class="modal-buttons">
+                <button id="confirm-add-user-btn" class="action-btn" aria-label="Confirm add user">Добавить</button>
+                <button id="cancel-add-user-btn" class="action-btn" aria-label="Cancel add user">Отменить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay-edit-user" aria-hidden="true">
+        <div class="modal-edit-user">
+            <h3>Редактировать пользователя</h3>
+            <label for="edit-user-name">Имя:</label>
+            <input type="text" id="edit-user-name" placeholder="Введите имя">
+            <label for="edit-user-age">Возраст:</label>
+            <input type="number" id="edit-user-age" placeholder="Введите возраст">
+            <label for="edit-user-rating">Рейтинг:</label>
+            <input type="text" id="edit-user-rating" placeholder="Введите рейтинг (★ ★ ★ ★ ☆)">
+            <div class="modal-buttons">
+                <button id="confirm-edit-user-btn" class="action-btn" aria-label="Confirm edit user">Сохранить</button>
+                <button id="cancel-edit-user-btn" class="action-btn" aria-label="Cancel edit user">Отменить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+

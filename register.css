@@ -1,0 +1,119 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #f5ff6b 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  border: 8px solid;
+  border-image: linear-gradient(
+      45deg,
+      #ff6b6b,
+      #f06595,
+      #cc5de8,
+      #845ef7,
+      #5c7cfa,
+      #339af0,
+      #22b8cf,
+      #20c997,
+      #51cf66,
+      #94d82d,
+      #fcc419,
+      #ff922b
+    )
+    1;
+  animation: rainbow-border 2s infinite linear;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.register-form input {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.register-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #6bf5ff, #3706a1);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #f06595, #ff6b6b);
+}
+
+.emoji {
+  margin-top: 20px;
+  font-size: 50px;
+}
+
+@keyframes rainbow-border {
+  0% {
+    border-image-source: linear-gradient(
+      45deg,
+      #ff6b6b,
+      #f06595,
+      #cc5de8,
+      #845ef7,
+      #5c7cfa,
+      #339af0,
+      #22b8cf,
+      #20c997,
+      #51cf66,
+      #94d82d,
+      #fcc419,
+      #ff922b
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      45deg,
+      #ff922b,
+      #fcc419,
+      #94d82d,
+      #51cf66,
+      #20c997,
+      #22b8cf,
+      #339af0,
+      #5c7cfa,
+      #845ef7,
+      #cc5de8,
+      #f06595,
+      #ff6b6b
+    );
+  }
+}

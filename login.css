@@ -1,0 +1,126 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #ff6b6b 100%);
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+  /* height: 100vh; */
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  border: 8px solid;
+  border-image: linear-gradient(
+      45deg,
+      #ff6b6b,
+      #f06595,
+      #cc5de8,
+      #845ef7,
+      #5c7cfa,
+      #339af0,
+      #22b8cf,
+      #20c997,
+      #51cf66,
+      #94d82d,
+      #fcc419,
+      #ff922b
+    )
+    1;
+  animation: rainbow-border 2s infinite linear;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #084c9f, #11f6d0);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #8865f0, #32b30b);
+}
+
+.emoji {
+  margin-top: 20px;
+  font-size: 50px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.emoji.show {
+  opacity: 1;
+}
+
+@keyframes rainbow-border {
+  0% {
+    border-image-source: linear-gradient(
+      45deg,
+      #ff6b6b,
+      #f06595,
+      #cc5de8,
+      #845ef7,
+      #5c7cfa,
+      #339af0,
+      #22b8cf,
+      #20c997,
+      #51cf66,
+      #94d82d,
+      #fcc419,
+      #ff922b
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      45deg,
+      #ff922b,
+      #fcc419,
+      #94d82d,
+      #51cf66,
+      #20c997,
+      #22b8cf,
+      #339af0,
+      #5c7cfa,
+      #845ef7,
+      #cc5de8,
+      #f06595,
+      #ff6b6b
+    );
+  }
+}
